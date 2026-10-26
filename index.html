@@ -174,21 +174,14 @@
   .tappa .ora{font-family:Cinzel, serif; font-weight:600; font-size:14px; letter-spacing:.16em; color:var(--tenue); text-transform:uppercase}
   .tappa h2{font-family:Cinzel, serif; font-size:19px; font-weight:600; color:var(--verde); letter-spacing:.04em; margin:2px 0}
   .tappa .via{font-size:20px}
-  .tappa a.mappa{font-family:Cinzel, serif; font-size:12.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--verde-2); text-decoration:none; border-bottom:1px solid var(--oro); display:inline-block; margin-top:6px; padding:4px 0}
+  .tappa .via a{color:inherit; text-decoration:underline; text-decoration-color:var(--oro); text-decoration-thickness:1px; text-underline-offset:4px}
+  .tappa .via a:hover{color:var(--verde-2)}
   .ztl{margin-top:10px; font-size:17px; font-style:italic; color:var(--tenue); display:flex; gap:8px; align-items:flex-start}
   .ztl b{font-style:normal; font-family:Cinzel,serif; font-size:11px; letter-spacing:.12em; border:1.5px solid #b23a2e; color:#b23a2e; border-radius:50%; width:34px; height:34px; display:inline-grid; place-items:center; flex:none; margin-top:2px}
 
   .chiusa{font-style:italic; font-size:25px; margin-top:34px; color:var(--verde)}
   .firma{font-family:Cinzel,serif; font-size:13px; letter-spacing:.25em; text-transform:uppercase; color:var(--tenue); margin-top:6px}
 
-  .azioni{display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:28px}
-  .btn{
-    font-family:Cinzel, serif; font-size:13px; font-weight:600; letter-spacing:.14em; text-transform:uppercase;
-    padding:13px 18px; border-radius:2px; text-decoration:none; cursor:pointer; border:1px solid var(--oro);
-    background:var(--verde); color:var(--carta);
-  }
-  .btn.sec{background:transparent; color:var(--verde)}
-  .btn:focus-visible{outline:2px solid var(--oro); outline-offset:3px}
 
   .piede{max-width:620px; margin:18px auto 0; text-align:center; color:#c9b98f; font-family:Cinzel,serif; font-size:11px; letter-spacing:.3em; text-transform:uppercase; opacity:.8}
 
@@ -283,8 +276,7 @@
         <div>
           <p class="ora">Ore 11:00</p>
           <h2>La premiazione</h2>
-          <p class="via">Via Borsari, 46 · Ferrara</p>
-          <a class="mappa" href="https://www.google.com/maps/search/?api=1&query=Via+Borsari+46+Ferrara" target="_blank" rel="noopener">Apri in Mappe →</a>
+          <p class="via"><a href="https://www.google.com/maps/search/?api=1&query=Via+Borsari+46+Ferrara" target="_blank" rel="noopener" aria-label="Via Borsari, 46 · Ferrara – apri in Mappe">Via Borsari, 46 · Ferrara</a></p>
         </div>
       </li>
       <li class="tappa">
@@ -292,8 +284,7 @@
         <div>
           <p class="ora">A seguire</p>
           <h2>Il pranzo, tutti insieme</h2>
-          <p class="via">Via Panfilio, 27 · Ferrara</p>
-          <a class="mappa" href="https://www.google.com/maps/search/?api=1&query=Via+Panfilio+27+Ferrara" target="_blank" rel="noopener">Apri in Mappe →</a>
+          <p class="via"><a href="https://www.google.com/maps/search/?api=1&query=Via+Panfilio+27+Ferrara" target="_blank" rel="noopener" aria-label="Via Panfilio, 27 · Ferrara – apri in Mappe">Via Panfilio, 27 · Ferrara</a></p>
           <p class="ztl"><b>ZTL</b><span>Via Panfilio è in zona a traffico limitato: conviene lasciare l'auto fuori e proseguire a piedi.</span></p>
         </div>
       </li>
@@ -301,38 +292,9 @@
 
     <p class="chiusa">Vi aspettiamo tutti!</p>
     <p class="firma">La famiglia Calzolari</p>
-
-    <div class="azioni">
-      <a class="btn" id="cal-google" target="_blank" rel="noopener"
-         href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Caduceo%20d%27Oro%20al%20Nonno%20Giancarlo%20Calzolari&dates=20261115T110000/20261115T160000&ctz=Europe/Rome&location=Via%20Borsari%2046%2C%20Ferrara&details=Ore%2011%20premiazione%20in%20Via%20Borsari%2046%2C%20Ferrara.%20A%20seguire%20pranzo%20in%20Via%20Panfilio%2027%2C%20Ferrara%20(ZTL).">Google Calendar</a>
-      <button class="btn sec" id="cal-ics" type="button">Calendario iPhone</button>
-    </div>
   </div>
 </main>
 
 <p class="piede">✚ &nbsp; Ferrara · MMXXVI &nbsp; ✚</p>
-
-<script>
-  // File .ics per Calendario Apple / Outlook
-  document.getElementById('cal-ics').addEventListener('click', function () {
-    var ics = [
-      'BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Famiglia Calzolari//Caduceo//IT','CALSCALE:GREGORIAN',
-      'BEGIN:VEVENT',
-      'UID:caduceo-oro-giancarlo-20261115@famiglia',
-      'DTSTAMP:20261026T120000Z',
-      'DTSTART:20261115T100000Z','DTEND:20261115T150000Z',
-      "SUMMARY:Caduceo d'Oro al Nonno Giancarlo Calzolari",
-      'LOCATION:Via Borsari 46\\, Ferrara',
-      'DESCRIPTION:Ore 11 premiazione in Via Borsari 46, Ferrara. A seguire pranzo in Via Panfilio 27, Ferrara (ZTL).',
-      'BEGIN:VALARM','TRIGGER:-PT2H','ACTION:DISPLAY','DESCRIPTION:Premiazione del Nonno','END:VALARM',
-      'END:VEVENT','END:VCALENDAR'
-    ].join('\r\n');
-    var url = URL.createObjectURL(new Blob([ics], {type:'text/calendar;charset=utf-8'}));
-    var a = document.createElement('a');
-    a.href = url; a.download = 'caduceo-oro-nonno-giancarlo-calzolari.ics';
-    document.body.appendChild(a); a.click(); a.remove();
-    setTimeout(function(){ URL.revokeObjectURL(url); }, 1000);
-  });
-</script>
 </body>
 </html>
