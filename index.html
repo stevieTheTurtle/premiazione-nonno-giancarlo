@@ -49,15 +49,15 @@
   "organizer": { "@type": "Organization", "name": "Ordine dei Farmacisti di Ferrara" },
   "location": {
     "@type": "Place",
-    "name": "Sede dell'Ordine dei Farmacisti di Ferrara",
-    "address": { "@type": "PostalAddress", "streetAddress": "Via Borsari 46", "addressLocality": "Ferrara", "addressCountry": "IT" }
+    "name": "Polo Chimico Bio Medico, Aula E1",
+    "address": { "@type": "PostalAddress", "streetAddress": "Via Luigi Borsari 46", "addressLocality": "Ferrara", "addressCountry": "IT" }
   },
   "subEvent": [
     {
       "@type": "Event",
       "name": "Cerimonia di premiazione",
       "startDate": "2026-11-15T11:00:00+01:00",
-      "location": { "@type": "Place", "address": { "@type": "PostalAddress", "streetAddress": "Via Borsari 46", "addressLocality": "Ferrara", "addressCountry": "IT" } }
+      "location": { "@type": "Place", "name": "Polo Chimico Bio Medico, Aula E1", "address": { "@type": "PostalAddress", "streetAddress": "Via Luigi Borsari 46", "addressLocality": "Ferrara", "addressCountry": "IT" } }
     },
     {
       "@type": "FoodEvent",
@@ -178,6 +178,16 @@
   .ztl{margin-top:10px; font-size:17px; font-style:italic; color:var(--tenue); display:flex; gap:8px; align-items:flex-start}
   .ztl b{font-style:normal; font-family:Cinzel,serif; font-size:11px; letter-spacing:.12em; border:1.5px solid #b23a2e; color:#b23a2e; border-radius:50%; width:34px; height:34px; display:inline-grid; place-items:center; flex:none; margin-top:2px}
 
+  .tappa .sala{font-size:17px; font-style:italic; color:var(--tenue); margin-top:2px}
+  .tappa .ora b, .tappa .sala b{font-style:normal; font-family:Cinzel,serif; font-weight:700; font-size:16px; letter-spacing:.08em; color:var(--verde); background:rgba(209,169,79,.18); border:1px solid var(--oro); border-radius:4px; padding:1px 7px; white-space:nowrap}
+  .tappa .ora b{font-size:15px; letter-spacing:.1em}
+
+  .parcheggi{max-width:440px; margin:30px auto 0; padding-top:18px; border-top:1px solid var(--bordo); text-align:left; font-size:17px; color:var(--tenue)}
+  .parcheggi h2{font-family:Cinzel, serif; font-size:14px; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:var(--verde); text-align:center; margin-bottom:10px; display:flex; align-items:center; justify-content:center; gap:10px}
+  .p-icona{font-family:Arial,Helvetica,sans-serif; font-weight:700; font-size:17px; letter-spacing:0; color:#fff; background:#2f5fa8; border-radius:5px; width:26px; height:26px; display:inline-grid; place-items:center; flex:none}
+  .parcheggi p + p{margin-top:8px}
+  .parcheggi b{font-weight:600; color:var(--verde)}
+
   .chiusa{font-style:italic; font-size:25px; margin-top:34px; color:var(--verde)}
   .firma{font-family:Cinzel,serif; font-size:13px; letter-spacing:.25em; text-transform:uppercase; color:var(--tenue); margin-top:6px}
 
@@ -273,9 +283,10 @@
       <li class="tappa">
         <svg class="icona" aria-hidden="true"><use href="#i-igea"/></svg>
         <div>
-          <p class="ora">Ore 11:00</p>
+          <p class="ora">Ore <b>11:00</b></p>
           <h2>La premiazione</h2>
-          <p class="via"><a href="https://www.google.com/maps/search/?api=1&query=Via+Borsari+46+Ferrara" target="_blank" rel="noopener" aria-label="Via Borsari, 46 · Ferrara – apri in Mappe">Via Borsari, 46 · Ferrara</a></p>
+          <p class="via"><a href="https://www.google.com/maps/search/?api=1&query=Via+Luigi+Borsari+46+Ferrara" target="_blank" rel="noopener" aria-label="Via Luigi Borsari, 46 · Ferrara – apri in Mappe">Via Luigi Borsari, 46 · Ferrara</a></p>
+          <p class="sala">Polo Chimico Bio Medico · <b>Aula E1</b></p>
         </div>
       </li>
       <li class="tappa">
@@ -291,6 +302,12 @@
 
     <p class="chiusa">Vi aspettiamo tutti!</p>
     <p class="firma">La famiglia Calzolari</p>
+
+    <section class="parcheggi" aria-labelledby="t-parcheggi">
+      <h2 id="t-parcheggi"><span class="p-icona" aria-hidden="true">P</span>Dove parcheggiare?</h2>
+      <p><b>Per Via Borsari</b> arrivare da Rampari di San Rocco, dove si parcheggia comodamente sui due lati. La domenica forse è gratis, ma meglio controllare.</p>
+      <p><b>Per Via Panfilio</b> parcheggio tra Via Poledrelli e Via Vittorio Veneto. Parcheggi gratuiti.</p>
+    </section>
   </div>
 </main>
 
